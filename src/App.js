@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import "./App.css";
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
   const [showResult, setShowResult] = useState(false);
   const [tooltipIndex, setTooltipIndex] = useState(null);
   const [tooltipPosition, setTooltipPosition] = useState({ top: 0, left: 0 });
+  const [isLoading, setIsLoading] = useState(false);
 
   const fetchData = () => {
     fetch("http://212.106.184.211/score?game=RA&limit=1000&offset=0")
@@ -26,10 +28,14 @@ function App() {
   }, []);
 
   const generateRandomScore = () => {
-    const randomIndex = Math.floor(Math.random() * data.length);
-    const randomItem = data[randomIndex];
-    setRandomScore(randomItem);
-    setShowResult(true);
+    setIsLoading(true); // Ustawia isLoading na true, aby rozpocząć animację kółka ładowania
+    setTimeout(() => {
+      const randomIndex = Math.floor(Math.random() * data.length);
+      const randomItem = data[randomIndex];
+      setRandomScore(randomItem);
+      setShowResult(true);
+      setIsLoading(false); // Ustawia isLoading na false, aby zakończyć animację kółka ładowania
+    }, 2000); // Generuje losowy wynik po 2 sekundach
   };
 
   const hideResult = () => {
@@ -147,12 +153,32 @@ function App() {
                   </p>
                 </div>
               )}
-              <button onClick={generateRandomScore}>Losu wynik</button>
+              <button
+                onClick={generateRandomScore}
+                disabled={isLoading} // Wyłącza przycisk, gdy isLoading jest true
+                className={isLoading ? "loading-button" : ""}
+              >
+                {isLoading ? ( // Wyświetla kółko ładowania, gdy isLoading jest true
+                  <i className="fa fa-circle-o-notch fa-spin"></i>
+                ) : (
+                  "Losuj wynik"
+                )}
+              </button>
               <button onClick={hideResult}>Schowaj wynik</button>
             </div>
           ) : (
             <div>
-              <button onClick={generateRandomScore}>Losuj wynik</button>
+              <button
+                onClick={generateRandomScore}
+                disabled={isLoading} // Wyłącza przycisk, gdy isLoading jest true
+                className={isLoading ? "loading-button" : ""}
+              >
+                {isLoading ? ( // Wyświetla kółko ładowania, gdy isLoading jest true
+                  <i className="fa fa-circle-o-notch fa-spin"></i>
+                ) : (
+                  "Losuj wynik"
+                )}
+              </button>
             </div>
           )}
         </div>
