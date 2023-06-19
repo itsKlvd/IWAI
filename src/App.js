@@ -10,7 +10,9 @@ function App() {
   const [tooltipPosition, setTooltipPosition] = useState({ top: 0, left: 0 });
 
   const fetchData = () => {
-    fetch("http://212.106.184.211/score?game=RA&limit=1000&offset=0")
+    const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+    const apiUrl = "http://212.106.184.211/score?game=RA&limit=1000&offset=0";
+    fetch(proxyUrl + apiUrl)
       .then((response) => response.json())
       .then((actualData) => {
         setData(actualData);
