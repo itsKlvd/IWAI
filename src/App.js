@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import "./App.css";
 
+
 function App() {
   const [data, setData] = useState([]);
   const [randomScore, setRandomScore] = useState(null);
@@ -90,8 +91,17 @@ function App() {
         />
       </Helmet>
 
+      <nav className="navbar">
+        <div className="navbar-brand">
+          <h1 className="navbar-heading">GameDev - Score</h1>
+        </div>
+        <ul className="navbar-menu">
+          <li className="navbar-item">Home</li>
+          <li className="navbar-item">Score</li>
+        </ul>
+      </nav>
+
       <div className="score-container">
-        <h1 className="score-heading">SCORE</h1>
         <table className="score-table">
           <thead>
             <tr>
@@ -137,17 +147,12 @@ function App() {
                   </p>
                 </div>
               )}
-              <button onClick={generateRandomScore}>Losuj wynik</button>
+              <button onClick={generateRandomScore}>Losu wynik</button>
+              <button onClick={hideResult}>Schowaj wynik</button>
             </div>
           ) : (
             <div>
               <button onClick={generateRandomScore}>Losuj wynik</button>
-            </div>
-          )}
-          <br />
-          {showResult && (
-            <div>
-              <button onClick={hideResult}>Schowaj wynik</button>
             </div>
           )}
         </div>

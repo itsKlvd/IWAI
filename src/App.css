@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  margin: 20px;
+  margin: 0px;
 }
 
 .score-container {
@@ -61,13 +61,64 @@ button {
 .score-table tbody tr:nth-child(-n+1) {
   background-color: #fff200;
 }
-.red-arrow {
-  color: red;
+.navbar {
+  background-color: #fff;
+  color: #333;
+  padding: 10px 40px 10px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  margin-top: -10px;
 }
 
-.green-arrow {
-  color: green;
+.navbar-brand {
+  font-size: 16px;
 }
+
+.navbar-menu {
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+}
+
+.navbar-item {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.score-heading {
+  text-align: center;
+}
+
+.score-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.first-row {
+  text-align: left;
+}
+
+.score-difference {
+  text-align: left;
+}
+
+.tooltip {
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 9999;
+}
+
+.score-container {
+  padding: 0 100px 0 100px;
+}
+
+
 
 
 
