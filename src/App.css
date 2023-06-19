@@ -1,0 +1,79 @@
+.App {
+  text-align: center;
+  margin: 20px;
+}
+
+.score-container {
+  margin-bottom: 20px;
+}
+
+.score-heading {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.score-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+
+}
+
+th,
+td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.first-row {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.random-score-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.random-score-container > div {
+  margin-bottom: 10px;
+}
+
+.score-table tbody tr:nth-child(-n+3) {
+  background-color: #BF7700;
+}
+.score-table tbody tr:nth-child(-n+2) {
+  background-color: silver;
+}
+.score-table tbody tr:nth-child(-n+1) {
+  background-color: #fff200;
+}
+.red-arrow {
+  color: red;
+}
+
+.green-arrow {
+  color: green;
+}
+
+
+
+
+
+
+
+
+

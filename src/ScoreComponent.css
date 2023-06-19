@@ -1,0 +1,29 @@
+.score-container {
+    max-width: 100%;
+    overflow-x: auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  .score-title {
+    text-align: center;
+    color: #333;
+  }
+  
+  .score-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .score-header {
+    padding: 10px;
+    border-bottom: 1px solid black;
+    background: linear-gradient(to bottom, #f2f2f2, #e6e6e6);
+    color: white;
+    background-image: linear-gradient(180deg, grey, black);
+  }
+  
+  .score-cell {
+    padding: 10px;
+    border-bottom: 1px solid gray;
+    color: #777;
+  }
